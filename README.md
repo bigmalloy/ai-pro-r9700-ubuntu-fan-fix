@@ -2,6 +2,8 @@
 
 Fix for the AMD Radeon AI Pro R9700 fan running at full speed (~2677 RPM) at idle when used in hybrid GPU mode on Linux.
 
+**Tested on:** Ubuntu 24.04.4 LTS · Kernel 6.17.0 · amdgpu in-kernel driver · RDNA 4 (Navi 48)
+
 ## The Problem
 
 In a hybrid GPU setup where the R9700 has **no display connected** (secondary GPU handles display output), the kernel's runtime power management suspends the R9700 into **D3hot** to save power. In D3hot, the amdgpu driver loses control of the fan and the card's hardware controller defaults to a fixed ~2677 RPM — loud at idle, regardless of temperature.
